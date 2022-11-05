@@ -16,6 +16,7 @@
 		399D39F829155CE4006826F7 /* ThemeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399D39F729155CE4006826F7 /* ThemeViewModel.swift */; };
 		399D39FA29157712006826F7 /* UserProfileSelectionComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399D39F929157711006826F7 /* UserProfileSelectionComponent.swift */; };
 		399D39FC291589DE006826F7 /* EnterPhoneNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399D39FB291589DE006826F7 /* EnterPhoneNumberView.swift */; };
+		399D39FE29167731006826F7 /* EnterOtpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399D39FD29167730006826F7 /* EnterOtpView.swift */; };
 		39C125BF2913F0DB00E5B441 /* GetStartedViewWaveBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C125BE2913F0DB00E5B441 /* GetStartedViewWaveBackground.swift */; };
 		39C125C12913F2B900E5B441 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C125C02913F2B900E5B441 /* LogInView.swift */; };
 /* End PBXBuildFile section */
@@ -31,6 +32,7 @@
 		399D39F729155CE4006826F7 /* ThemeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeViewModel.swift; sourceTree = "<group>"; };
 		399D39F929157711006826F7 /* UserProfileSelectionComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileSelectionComponent.swift; sourceTree = "<group>"; };
 		399D39FB291589DE006826F7 /* EnterPhoneNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPhoneNumberView.swift; sourceTree = "<group>"; };
+		399D39FD29167730006826F7 /* EnterOtpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterOtpView.swift; sourceTree = "<group>"; };
 		39C125BE2913F0DB00E5B441 /* GetStartedViewWaveBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartedViewWaveBackground.swift; sourceTree = "<group>"; };
 		39C125C02913F2B900E5B441 /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,6 +94,7 @@
 				399D39F929157711006826F7 /* UserProfileSelectionComponent.swift */,
 				39C125C02913F2B900E5B441 /* LogInView.swift */,
 				399D39FB291589DE006826F7 /* EnterPhoneNumberView.swift */,
+				399D39FD29167730006826F7 /* EnterOtpView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -183,6 +186,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				399D39FA29157712006826F7 /* UserProfileSelectionComponent.swift in Sources */,
+				399D39FE29167731006826F7 /* EnterOtpView.swift in Sources */,
 				397BCD8D28F405FB00A9FDF6 /* ContentView.swift in Sources */,
 				399D39FC291589DE006826F7 /* EnterPhoneNumberView.swift in Sources */,
 				39C125BF2913F0DB00E5B441 /* GetStartedViewWaveBackground.swift in Sources */,

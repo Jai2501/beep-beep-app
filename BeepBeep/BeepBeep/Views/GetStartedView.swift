@@ -245,7 +245,11 @@ struct GetStartedView: View {
                         .toggleStyle(.button)
 
                         NavigationLink (
-                            destination: EnterPhoneNumberView(),
+                            destination:
+//                                LogInView(),
+                                EnterPhoneNumberView(
+                                backgroundColor: $appTheme.theme.themeColor,
+                                backgroundColorGradient: $appTheme.theme.themeGradientColor),
                             label: {
                                 RoundedRectangle(cornerRadius: 25)
                                     .frame(width: 270, height: 40)
