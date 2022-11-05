@@ -13,4 +13,3 @@ struct ThemeModel: Identifiable {
     var themeColor: Color
     var themeGradientColor: LinearGradient
 }
- 

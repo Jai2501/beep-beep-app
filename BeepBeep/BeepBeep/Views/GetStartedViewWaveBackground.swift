@@ -8,33 +8,47 @@
 import SwiftUI
 
 struct GetStartedViewWaveBackground: View {
+
     
+    // Preset Values
     @State private var percent = 100.0
     @State private var waveOffset = Angle(degrees: 0)
     @State private var waveOffsetTwo = Angle(degrees: 180)
     
-    @State var backgroundColour: Color = Color("b-light-orange")
-    @State var backgroundColourGradient: LinearGradient = LinearGradient(
-        colors: [Color("b-light-orange").opacity(1), Color("b-light-orange").opacity(0.25)],
-        startPoint: .top,
-        endPoint: .bottom)
+    @Binding var backgroundColour: Color
+    @Binding var backgroundColourGradient: LinearGradient
+    
+    // Default
+//    @State var backgroundColour: Color = Color("b-light-orange")
+//    @State var backgroundColourGradient: LinearGradient = LinearGradient(
+//        colors: [Color("b-light-orange").opacity(1), Color("b-light-orange").opacity(0.25)],
+//        startPoint: .top,
+//        endPoint: .bottom)
+    
+    // Set new values on users descretion
+//    init(backgroundColour: Color, backgroundColourGradient: LinearGradient) {
+//        self.backgroundColour = backgroundColour
+//        self.backgroundColourGradient = backgroundColourGradient
+//    }
+    
+//    @StateObject var appTheme = ThemeViewModel()
+//
+//    init() {
+//        self.backgroundColour = appTheme.theme.themeColor
+//        self.backgroundColourGradient = appTheme.theme.themeGradientColor
+//    }
+    
+//    @State var appTheme: ThemeViewModel
+//
+//    init(@State appTheme: ThemeViewModel) {
+//        self.appTheme = appTheme
+//        self.backgroundColour = appTheme.theme.themeColor
+//        self.backgroundColourGradient = appTheme.theme.themeGradientColor
+//    }
     
     var body: some View {
         ZStack {
             VStack{
-//                RoundedRectangle(cornerRadius: 25)
-//                    .fill(
-//                        LinearGradient(
-//                            colors: [.white, Color("b-light-orange")],
-//                            startPoint: .top,
-//                            endPoint: .bottom
-//                        ))
-//                    .frame(
-//                        width: UIScreen.main.bounds.width,
-//                        height: (UIScreen.main.bounds.height / 3))
-                
-//                Text("Hi")
-                
                 ZStack {
                     Wave(offset: Angle(degrees: self.waveOffset.degrees), percent: percent / 100)
                         .fill(backgroundColourGradient)
@@ -59,20 +73,12 @@ struct GetStartedViewWaveBackground: View {
                             }
                 }
                 .rotation3DEffect(.degrees(180), axis: (x: 1, y: 0, z: 0))
+                // The above statment rotates View/Shape by 180
 
                  Spacer()
             }
             .edgesIgnoringSafeArea(.all)
-            
-//            VStack {
-//                    Text("Hi")
-//                    Text("Get Started!")
-//
-////                Spacer()
-//            }
-//            .foregroundColor(.cyan)
         }
-//        .navigationTitle("Get Started")
     }
 }
 
@@ -109,8 +115,8 @@ struct Wave: Shape {
     }
 }
 
-struct GetStartedViewWaveBackground_Previews: PreviewProvider {
-    static var previews: some View {
-        GetStartedViewWaveBackground()
-    }
-}
+//struct GetStartedViewWaveBackground_Previews: PreviewProvider {
+//    static var previews: some View {
+//        GetStartedViewWaveBackground(backgroundColour: .cyan, backgroundColourGradient: LinearGradient(colors: [.cyan, .white], startPoint: .top, endPoint: .bottom))
+//    }
+//}

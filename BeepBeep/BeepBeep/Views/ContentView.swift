@@ -21,8 +21,8 @@ struct ContentView: View {
                 
                 Image("WelcomeScreenMain")
                     .resizable()
-                    .frame(width:670 ,height: 417)
-                    .padding(.leading, 270)
+                    .frame(width:640 ,height: 400)
+                    .padding(.leading, 290)
                 
                 Spacer()
                 

@@ -10,13 +10,19 @@ import SwiftUI
 class ThemeViewModel: ObservableObject {
     @Published var theme: ThemeModel
     
+    var orignalColor: Color = Color("b-light-orange")
+    var wheelChairColor: Color = Color("b-teal")
+    var seniorCitizenColor: Color = Color("b-blue")
+    var visualImpairmentColor: Color = Color("b-dark-blue")
+    var familyWithStrollerColor: Color = Color("b-purple")
+    
     // Remember WAVE INVERTED, either invert start or end point or Colors Array
     init() {
         theme = ThemeModel(
             themeColor: Color("b-light-orange"),
             themeGradientColor: LinearGradient(
-                colors: [Color("b-light-orange"),
-                         Color("b-light-orange").opacity(0.25)],
+                colors: [orignalColor,
+                         orignalColor.opacity(0.25)],
                 startPoint: .top,
                 endPoint: .bottom)
         )
@@ -26,8 +32,8 @@ class ThemeViewModel: ObservableObject {
         theme = ThemeModel(
             themeColor: Color("b-teal"),
             themeGradientColor: LinearGradient(
-                colors: [Color("b-teal"),
-                         Color("b-teal").opacity(0.5)],
+                colors: [wheelChairColor,
+                         wheelChairColor.opacity(0.5)],
                 startPoint: .top,
                 endPoint: .bottom)
         )
@@ -37,8 +43,8 @@ class ThemeViewModel: ObservableObject {
         theme = ThemeModel(
             themeColor: Color("b-blue"),
             themeGradientColor: LinearGradient(
-                colors: [Color("b-blue"),
-                         Color("b-blue").opacity(0.5)],
+                colors: [seniorCitizenColor,
+                         seniorCitizenColor.opacity(0.5)],
                 startPoint: .top,
                 endPoint: .bottom)
         )
@@ -48,8 +54,8 @@ class ThemeViewModel: ObservableObject {
         theme = ThemeModel(
             themeColor: Color("b-dark-blue"),
             themeGradientColor: LinearGradient(
-                colors: [Color("b-dark-blue"),
-                         Color("b-dark-blue").opacity(0.5)],
+                colors: [visualImpairmentColor,
+                         visualImpairmentColor.opacity(0.5)],
                 startPoint: .top,
                 endPoint: .bottom)
         )
@@ -59,8 +65,8 @@ class ThemeViewModel: ObservableObject {
         theme = ThemeModel(
             themeColor: Color("b-purple"),
             themeGradientColor: LinearGradient(
-                colors: [Color("b-purple"),
-                         Color("b-purple").opacity(0.5)],
+                colors: [familyWithStrollerColor,
+                         familyWithStrollerColor.opacity(0.5)],
                 startPoint: .top,
                 endPoint: .bottom)
         )
