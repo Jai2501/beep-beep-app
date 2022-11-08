@@ -8,11 +8,15 @@
 import SwiftUI
 
 struct EnterPhoneNumberView: View {
-    @State var countryCode: String = ""
-    @State var phoneNumber: String = ""
     
-    @Binding var backgroundColor: Color
-    @Binding var backgroundColorGradient: LinearGradient
+    @EnvironmentObject var appTheme: ThemeViewModel
+    @EnvironmentObject var user: UserViewModel
+    
+    // Temp Purposes
+//    @State var countryCode: String = "+65"
+//    @State var phoneNumber: String = ""
+    
+    @StateObject var otpModel: OtpViewModel = .init()
     
     var body: some View {
         ZStack {
@@ -35,7 +39,7 @@ struct EnterPhoneNumberView: View {
                     .renderingMode(.template)
                     .resizable()
                     .scaledToFill()
-                    .foregroundColor(backgroundColor.opacity(0.3))
+                    .foregroundColor(appTheme.theme.themeColor.opacity(0.3))
                     .frame(width: UIScreen.main.bounds.width * 1.55)
                     .padding(.bottom, UIScreen.main.bounds.height * 1.2)
             }
@@ -59,7 +63,7 @@ struct EnterPhoneNumberView: View {
                                 .stroke(Color("b-light-gray"), lineWidth: 2)
                                 .frame(width: 70, height: 45)
                                 .overlay {
-                                    TextField("+65", text: $countryCode)
+                                    TextField("+65", text: $otpModel.countryCode)
                                         .padding()
                                         .keyboardType(.numberPad)
                                 }
@@ -67,9 +71,9 @@ struct EnterPhoneNumberView: View {
                             RoundedRectangle(cornerRadius: 10)
                                 .stroke(Color("b-light-gray"), lineWidth: 2)
                                 .frame(width: 250, height: 45)
-                                .border(Color("b-light-gray"))
+//                                .border(Color("b-light-gray"))
                                 .overlay {
-                                    TextField("Phone Number", text: $phoneNumber)
+                                    TextField("Phone Number", text: $otpModel.phoneNumber)
                                         .padding()
                                         .keyboardType(.numberPad)
                                 }
@@ -77,7 +81,10 @@ struct EnterPhoneNumberView: View {
                         .padding(.bottom, 150)
                         
                         NavigationLink (
-                            destination: LogInView(),
+                            destination: EnterOtpView()
+                                .environmentObject(otpModel)
+                                .environmentObject(appTheme)
+                                .environmentObject(user),
                             label: {
                                 RoundedRectangle(cornerRadius: 25)
                                     .frame(width: 280, height: 40)
@@ -87,8 +94,25 @@ struct EnterPhoneNumberView: View {
                                             .foregroundColor(.white)
                                             .bold()
                                     )
+                                    .opacity(isPhoneNumberValid() ? 1 : 0.5)
+                                    .disabled(!isPhoneNumberValid())
+//                                Button {
+//                                    Task {
+//                                        await otpModel.sendOtp()
+//                                    }
+//                                } label: {
+//                                    RoundedRectangle(cornerRadius: 25)
+//                                        .frame(width: 280, height: 40)
+//                                        .foregroundColor(Color("b-orange"))
+//                                        .overlay(
+//                                            Text("Send me a verification code")
+//                                                .foregroundColor(.white)
+//                                                .bold()
+//                                        )
+//                                }
                             })
                         .padding(8)
+                        .disabled(!isPhoneNumberValid())
                         
                         Spacer()
                     }
@@ -99,6 +123,11 @@ struct EnterPhoneNumberView: View {
         }
         .edgesIgnoringSafeArea(.all)
         .navigationTitle("Phone Number")
+        .ignoresSafeArea(.keyboard)
+    }
+    
+    func isPhoneNumberValid() -> Bool {
+        return otpModel.phoneNumber.count > 5
     }
 }
 

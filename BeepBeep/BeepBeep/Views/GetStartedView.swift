@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct GetStartedView: View {
-    @ObservedObject var appTheme = ThemeViewModel()
+    @ObservedObject var appTheme: ThemeViewModel = ThemeViewModel()
+    @ObservedObject var user: UserViewModel = .init()
     
     @State var isNoSpecialAssistanceRequired = false
     
@@ -16,6 +17,34 @@ struct GetStartedView: View {
     @State var isSeniorCitizenUser = false
     @State var isVisualImpairmentUser = false
     @State var isFamilyWithStrollers = false
+    
+    func selectedAtleastOneProfileType() -> Bool {
+        return (isNoSpecialAssistanceRequired || isWheelChairUser || isSeniorCitizenUser || isVisualImpairmentUser || isFamilyWithStrollers)
+    }
+    
+    func getUserSpecialNeeds() -> UserSpecialNeeds {
+        if (isNoSpecialAssistanceRequired) {
+            return .noSpecialNeeds
+        }
+        
+        if (isWheelChairUser) {
+            return .wheelChair
+        }
+        
+        if (isSeniorCitizenUser) {
+            return .seniorCitizen
+        }
+        
+        if (isVisualImpairmentUser) {
+            return .visuallyImpaired
+        }
+        
+        if (isFamilyWithStrollers) {
+            return .familyWithStroller
+        }
+        
+        return .notDefined
+    }
     
     // Functions to handle tapping and untapping each component
     func tappedOnWheelChairUser() {
@@ -38,6 +67,8 @@ struct GetStartedView: View {
         if (isNoSpecialAssistanceRequired) {
             isNoSpecialAssistanceRequired.toggle()
         }
+        
+        user.updateUserSpecialNeeds(specialNeeds: getUserSpecialNeeds())
     }
     
     func tappedOnSeniorCitizenUser() {
@@ -60,6 +91,8 @@ struct GetStartedView: View {
         if (isNoSpecialAssistanceRequired) {
             isNoSpecialAssistanceRequired.toggle()
         }
+        
+        user.updateUserSpecialNeeds(specialNeeds: getUserSpecialNeeds())
     }
     
     func tappedOnVisualImpairmentUser() {
@@ -81,6 +114,8 @@ struct GetStartedView: View {
         if (isNoSpecialAssistanceRequired) {
             isNoSpecialAssistanceRequired.toggle()
         }
+        
+        user.updateUserSpecialNeeds(specialNeeds: getUserSpecialNeeds())
     }
     
     func tappedOnFamilyWithStrollerUser() {
@@ -102,6 +137,8 @@ struct GetStartedView: View {
         if (isNoSpecialAssistanceRequired) {
             isNoSpecialAssistanceRequired.toggle()
         }
+        
+        user.updateUserSpecialNeeds(specialNeeds: getUserSpecialNeeds())
     }
     
     func tappedOnNoSpecialAssistanceUser() {
@@ -123,6 +160,8 @@ struct GetStartedView: View {
         if (isFamilyWithStrollers) {
             isFamilyWithStrollers.toggle()
         }
+        
+        user.updateUserSpecialNeeds(specialNeeds: getUserSpecialNeeds())
     }
     
     var body: some View {
@@ -247,9 +286,9 @@ struct GetStartedView: View {
                         NavigationLink (
                             destination:
 //                                LogInView(),
-                                EnterPhoneNumberView(
-                                backgroundColor: $appTheme.theme.themeColor,
-                                backgroundColorGradient: $appTheme.theme.themeGradientColor),
+                                EnterPhoneNumberView()
+                                .environmentObject(appTheme)
+                                .environmentObject(user),
                             label: {
                                 RoundedRectangle(cornerRadius: 25)
                                     .frame(width: 270, height: 40)
@@ -259,8 +298,11 @@ struct GetStartedView: View {
                                             .foregroundColor(.white)
                                             .bold()
                                     )
+                                    .opacity(selectedAtleastOneProfileType() ? 1 : 0.5)
+                                    .disabled(!selectedAtleastOneProfileType())
                         })
                         .padding(8)
+                        .disabled(!selectedAtleastOneProfileType())
                         
                         Spacer()
                     }
