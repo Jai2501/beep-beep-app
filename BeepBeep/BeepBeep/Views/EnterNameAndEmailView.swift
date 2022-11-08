@@ -12,7 +12,6 @@ struct EnterNameAndEmailView: View {
     @EnvironmentObject var appTheme: ThemeViewModel
     @EnvironmentObject var user: UserViewModel
     
-    // Temp for testing
     @State var name: String = ""
     @State var email: String = ""
     
@@ -27,7 +26,6 @@ struct EnterNameAndEmailView: View {
                     .renderingMode(.template)
                     .resizable()
                     .scaledToFill()
-//                    .foregroundColor(appTheme.theme.themeColor.opacity(0.3))
                     .foregroundColor(appTheme.theme.themeColor.opacity(0.3))
                     .frame(width: UIScreen.main.bounds.width * 1.55)
                     .padding(.bottom, UIScreen.main.bounds.height * 1.2)

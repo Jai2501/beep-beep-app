@@ -41,7 +41,7 @@ struct ContentView: View {
                 .padding(5)
                 
                 NavigationLink(
-                    destination: LogInView(),
+                    destination: DirectionAndGuidanceView(),
                     label: {
                         RoundedRectangle(cornerRadius: 25)
                             .stroke(Color("b-orange"), lineWidth: 2)
