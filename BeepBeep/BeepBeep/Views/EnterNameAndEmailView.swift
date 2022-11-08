@@ -9,24 +9,29 @@ import SwiftUI
 
 struct EnterNameAndEmailView: View {
     
+    @EnvironmentObject var appTheme: ThemeViewModel
+    @EnvironmentObject var user: UserViewModel
+    
     // Temp for testing
     @State var name: String = ""
     @State var email: String = ""
     
-    
     var body: some View {
         ZStack {
+            
+            // Hack too not working
+            Color.clear
+            
             VStack {
                 Image("GetStartedBackground")
                     .renderingMode(.template)
                     .resizable()
                     .scaledToFill()
 //                    .foregroundColor(appTheme.theme.themeColor.opacity(0.3))
-                    .foregroundColor(.cyan.opacity(0.3))
+                    .foregroundColor(appTheme.theme.themeColor.opacity(0.3))
                     .frame(width: UIScreen.main.bounds.width * 1.55)
                     .padding(.bottom, UIScreen.main.bounds.height * 1.2)
             }
-            .edgesIgnoringSafeArea(.all)
             
             VStack {
                 Spacer(minLength: UIScreen.main.bounds.height * 0.47)
@@ -43,6 +48,10 @@ struct EnterNameAndEmailView: View {
                             TextField("Name", text: $name)
                                 .padding()
                                 .keyboardType(.default)
+                                .onChange(of: name) { newValue in
+                                    print("New Name")
+                                    user.updateUserName(name: newValue)
+                                }
                         }
                 }
                 .padding()
@@ -59,6 +68,10 @@ struct EnterNameAndEmailView: View {
                             TextField("Email", text: $email)
                                 .padding()
                                 .keyboardType(.default)
+                                .onChange(of: email) { newValue in
+                                    print("New Email")
+                                    user.updateUserEmail(email: newValue)
+                                }
                         }
                 }
                 .padding()
@@ -67,7 +80,7 @@ struct EnterNameAndEmailView: View {
                 
                 VStack {
                     NavigationLink (
-                        destination: LogInView(),
+                        destination: UserProfileView().environmentObject(user),
                         label: {
                             RoundedRectangle(cornerRadius: 25)
                                 .frame(width: 280, height: 40)
@@ -78,22 +91,28 @@ struct EnterNameAndEmailView: View {
                                         .bold()
                                 )
                                 .padding(5)
-                                .disabled(false)
-                                .opacity(true ? 1 : 0.5)
+                                .disabled(!(user.isUserEmailValid() && user.isUserNameValid()))
+                                .opacity(user.isUserEmailValid() && user.isUserNameValid() ? 1 : 0.5)
                         })
                         .padding(8)
+                        .disabled(!(user.isUserEmailValid() && user.isUserNameValid()))
                     
                     Text("By singing up, you agree to our Privacy Policy and \n Terms & Conditions")
                         .font(.caption)
                         .multilineTextAlignment(.center)
-                    
-                    Text("")
                 }
                 
                 Spacer()
             }
         }
+        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+        .ignoresSafeArea(.keyboard, edges: .all)
         .navigationTitle("Profile")
+        .onAppear {
+            user.updateUserName(name: name)
+            user.updateUserEmail(email: email)
+        }
+        // .edgesIgnoringSafeArea(.all)
     }
 }
 

@@ -33,4 +33,16 @@ class UserViewModel: ObservableObject {
     func updateUserSpecialNeeds(specialNeeds: UserSpecialNeeds) {
         self.user = UserModel(name: self.user.name, email: self.user.email, phoneNumber: self.user.phoneNumber, userSpecialNeeds: specialNeeds)
     }
+    
+    func isUserNameValid() -> Bool {
+        return user.name.count > 2
+    }
+    
+    func isUserEmailValid() -> Bool {
+        return user.email.count > 3
+    }
+    
+    func isUserPhoneNumberValid() -> Bool {
+        return user.phoneNumber.count > 5
+    }
 }

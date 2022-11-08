@@ -90,10 +90,10 @@ struct EnterOtpView: View {
 //                    .opacity(checkAllFieldsFilled() ? 1 : 0.5)
                     
                     NavigationLink (
-                        destination: EnterNameAndEmailView(),
+                        destination: EnterNameAndEmailView()
 //                            .environmentObject(otpModel)
-//                            .environmentObject(appTheme)
-//                            .environmentObject(user),
+                            .environmentObject(appTheme)
+                            .environmentObject(user),
                         label: {
                             RoundedRectangle(cornerRadius: 25)
                                 .frame(width: 280, height: 40)

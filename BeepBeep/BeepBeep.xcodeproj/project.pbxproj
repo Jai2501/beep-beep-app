@@ -18,6 +18,7 @@
 		399D39FA29157712006826F7 /* UserProfileSelectionComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399D39F929157711006826F7 /* UserProfileSelectionComponent.swift */; };
 		399D39FC291589DE006826F7 /* EnterPhoneNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399D39FB291589DE006826F7 /* EnterPhoneNumberView.swift */; };
 		399D39FE29167731006826F7 /* EnterOtpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399D39FD29167730006826F7 /* EnterOtpView.swift */; };
+		39B7EE8E291A0C2200778C3A /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B7EE8D291A0C2200778C3A /* UserProfileView.swift */; };
 		39C125BF2913F0DB00E5B441 /* GetStartedViewWaveBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C125BE2913F0DB00E5B441 /* GetStartedViewWaveBackground.swift */; };
 		39C125C12913F2B900E5B441 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C125C02913F2B900E5B441 /* LogInView.swift */; };
 		39D4DB5F29176D700066D333 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 39D4DB5E29176D6F0066D333 /* GoogleService-Info.plist */; };
@@ -44,6 +45,7 @@
 		399D39F929157711006826F7 /* UserProfileSelectionComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileSelectionComponent.swift; sourceTree = "<group>"; };
 		399D39FB291589DE006826F7 /* EnterPhoneNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPhoneNumberView.swift; sourceTree = "<group>"; };
 		399D39FD29167730006826F7 /* EnterOtpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterOtpView.swift; sourceTree = "<group>"; };
+		39B7EE8D291A0C2200778C3A /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
 		39C125BE2913F0DB00E5B441 /* GetStartedViewWaveBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartedViewWaveBackground.swift; sourceTree = "<group>"; };
 		39C125C02913F2B900E5B441 /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
 		39D4DB5E29176D6F0066D333 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				399D39FB291589DE006826F7 /* EnterPhoneNumberView.swift */,
 				399D39FD29167730006826F7 /* EnterOtpView.swift */,
 				39E0B36A2918048800510A5F /* EnterNameAndEmailView.swift */,
+				39B7EE8D291A0C2200778C3A /* UserProfileView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 				39E0B36B2918048900510A5F /* EnterNameAndEmailView.swift in Sources */,
 				397BCD8B28F405FB00A9FDF6 /* BeepBeepApp.swift in Sources */,
 				396260692916BA4100C3BFBE /* OtpViewModel.swift in Sources */,
+				39B7EE8E291A0C2200778C3A /* UserProfileView.swift in Sources */,
 				39E0B3692917E95200510A5F /* UserViewModel.swift in Sources */,
 				399D39F829155CE4006826F7 /* ThemeViewModel.swift in Sources */,
 				39D4DB6D29177F8E0066D333 /* UserModel.swift in Sources */,
