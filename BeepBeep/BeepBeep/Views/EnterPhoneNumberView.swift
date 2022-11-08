@@ -12,118 +12,73 @@ struct EnterPhoneNumberView: View {
     @EnvironmentObject var appTheme: ThemeViewModel
     @EnvironmentObject var user: UserViewModel
     
-    // Temp Purposes
-//    @State var countryCode: String = "+65"
-//    @State var phoneNumber: String = ""
-    
     @StateObject var otpModel: OtpViewModel = .init()
     
     var body: some View {
-        ZStack {
-                //                Image("WelcomeScreenMain")
-                //                    .resizable()
-                //                .frame(width: 350, height: 200)
-                //
-                //                Spacer()
-  
-            // Enable Animation -> Issue: Moving Objects
+        ZStack(alignment: .top) {
+            Color.clear
             
-//                GetStartedViewWaveBackground(
-//                    backgroundColour: $backgroundColor,
-//                    backgroundColourGradient: $backgroundColorGradient
-//                )
-//                .padding(.bottom, UIScreen.main.bounds.height * 0.95)
+            Image("GetStartedBackgroundCut")
+                .renderingMode(.template)
+                .resizable()
+                .scaledToFit()
+                .foregroundColor(appTheme.theme.themeColor.opacity(0.3))
+                .edgesIgnoringSafeArea(.all)
             
             VStack {
-                Image("GetStartedBackground")
-                    .renderingMode(.template)
-                    .resizable()
-                    .scaledToFill()
-                    .foregroundColor(appTheme.theme.themeColor.opacity(0.3))
-                    .frame(width: UIScreen.main.bounds.width * 1.55)
-                    .padding(.bottom, UIScreen.main.bounds.height * 1.2)
-            }
-            .edgesIgnoringSafeArea(.all)
-            
-            RoundedRectangle(cornerRadius: 25)
-                .blendMode(.destinationOut)
-                .frame(
-                    width: UIScreen.main.bounds.width,
-                    height: UIScreen.main.bounds.height
-                )
-                .overlay {
-                    VStack(alignment: .center) {
-                        
-                        Text("Phone Number")
-                            .bold()
-                        //                    .frame(width: .infinity, alignment: .leading)
-                        
-                        HStack {
-                            RoundedRectangle(cornerRadius: 10)
-                                .stroke(Color("b-light-gray"), lineWidth: 2)
-                                .frame(width: 70, height: 45)
-                                .overlay {
-                                    TextField("+65", text: $otpModel.countryCode)
-                                        .padding()
-                                        .keyboardType(.numberPad)
-                                }
-                            
-                            RoundedRectangle(cornerRadius: 10)
-                                .stroke(Color("b-light-gray"), lineWidth: 2)
-                                .frame(width: 250, height: 45)
-//                                .border(Color("b-light-gray"))
-                                .overlay {
-                                    TextField("Phone Number", text: $otpModel.phoneNumber)
-                                        .padding()
-                                        .keyboardType(.numberPad)
-                                }
+                Text("Phone Number")
+                    .bold()
+                    .multilineTextAlignment(.leading)
+                
+                HStack {
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(Color("b-light-gray"), lineWidth: 2)
+                        .frame(width: 70, height: 45)
+                        .overlay {
+                            TextField("+65", text: $otpModel.countryCode)
+                                .padding()
+                                .keyboardType(.phonePad)
                         }
-                        .padding(.bottom, 150)
-                        
-                        NavigationLink (
-                            destination: EnterOtpView()
-                                .environmentObject(otpModel)
-                                .environmentObject(appTheme)
-                                .environmentObject(user),
-                            label: {
-                                RoundedRectangle(cornerRadius: 25)
-                                    .frame(width: 280, height: 40)
-                                    .foregroundColor(Color("b-orange"))
-                                    .overlay(
-                                        Text("Send me a verification code")
-                                            .foregroundColor(.white)
-                                            .bold()
-                                    )
-                                    .opacity(isPhoneNumberValid() ? 1 : 0.5)
-                                    .disabled(!isPhoneNumberValid())
-//                                Button {
-//                                    Task {
-//                                        await otpModel.sendOtp()
-//                                    }
-//                                } label: {
-//                                    RoundedRectangle(cornerRadius: 25)
-//                                        .frame(width: 280, height: 40)
-//                                        .foregroundColor(Color("b-orange"))
-//                                        .overlay(
-//                                            Text("Send me a verification code")
-//                                                .foregroundColor(.white)
-//                                                .bold()
-//                                        )
-//                                }
-                            })
-                        .padding(8)
-                        .disabled(!isPhoneNumberValid())
-                        
-                        Spacer()
-                    }
-                    .padding()
-                    .padding(.top, 140)
+                    
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(Color("b-light-gray"), lineWidth: 2)
+                        .frame(width: 250, height: 45)
+                        .overlay {
+                            TextField("Phone Number", text: $otpModel.phoneNumber)
+                                .padding()
+                                .keyboardType(.numberPad)
+                        }
                 }
-                .compositingGroup()
+            }
+            .padding(.top, UIScreen.main.bounds.height * 0.125)
+            
+            ZStack(alignment: .center) {
+                Color.clear
+                
+                NavigationLink (
+                    destination: EnterOtpView()
+                        .environmentObject(otpModel)
+                        .environmentObject(appTheme)
+                        .environmentObject(user),
+                    label: {
+                        RoundedRectangle(cornerRadius: 25)
+                            .frame(width: 280, height: 40)
+                            .foregroundColor(Color("b-orange"))
+                            .overlay(
+                                Text("Send me a verification code")
+                                    .foregroundColor(.white)
+                                    .bold()
+                            )
+                            .opacity(isPhoneNumberValid() ? 1 : 0.5)
+                            .disabled(!isPhoneNumberValid())
+                    }
+                )
+                .disabled(!isPhoneNumberValid())
+                
+            }
         }
-        .edgesIgnoringSafeArea(.all)
+        .ignoresSafeArea(.keyboard, edges: .all)
         .navigationTitle("Phone Number")
-        .ignoresSafeArea(.keyboard)
     }
     
     func isPhoneNumberValid() -> Bool {
