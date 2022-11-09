@@ -16,28 +16,24 @@ struct EnterNameAndEmailView: View {
     @State var email: String = ""
     
     var body: some View {
-        ZStack {
-            
-            // Hack too not working
+        ZStack(alignment: .top) {
+        
             Color.clear
+        
+            Image("GetStartedBackgroundCut")
+                .renderingMode(.template)
+                .resizable()
+                .scaledToFit()
+                .foregroundColor(appTheme.theme.themeColor.opacity(0.3))
+                .edgesIgnoringSafeArea(.all)
             
             VStack {
-                Image("GetStartedBackground")
-                    .renderingMode(.template)
-                    .resizable()
-                    .scaledToFill()
-                    .foregroundColor(appTheme.theme.themeColor.opacity(0.3))
-                    .frame(width: UIScreen.main.bounds.width * 1.55)
-                    .padding(.bottom, UIScreen.main.bounds.height * 1.2)
-            }
-            
-            VStack {
-                Spacer(minLength: UIScreen.main.bounds.height * 0.47)
-                
                 VStack {
+                    Spacer()
+                    
                     Text("Name")
                         .bold()
-                        .padding(.trailing, UIScreen.main.bounds.width * 0.6)
+                        .padding(.trailing, UIScreen.main.bounds.width * 0.59)
                     
                     RoundedRectangle(cornerRadius: 10)
                         .stroke(Color("b-light-gray"), lineWidth: 2)
@@ -51,34 +47,35 @@ struct EnterNameAndEmailView: View {
                                     user.updateUserName(name: newValue)
                                 }
                         }
-                }
-                .padding()
-                
-                VStack {
-                    Text("Email")
-                        .bold()
-                        .padding(.trailing, UIScreen.main.bounds.width * 0.6)
-                    
-                    RoundedRectangle(cornerRadius: 10)
-                        .stroke(Color("b-light-gray"), lineWidth: 2)
-                        .frame(width: 280, height: 45)
-                        .overlay {
-                            TextField("Email", text: $email)
-                                .padding()
-                                .keyboardType(.default)
-                                .onChange(of: email) { newValue in
-                                    print("New Email")
-                                    user.updateUserEmail(email: newValue)
-                                }
-                        }
+                        .padding(.bottom)
+
+                        Text("Email")
+                            .bold()
+                            .padding(.trailing, UIScreen.main.bounds.width * 0.59)
+                        
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(Color("b-light-gray"), lineWidth: 2)
+                            .frame(width: 280, height: 45)
+                            .overlay {
+                                TextField("Email", text: $email)
+                                    .padding()
+                                    .keyboardType(.default)
+                                    .onChange(of: email) { newValue in
+                                        print("New Email")
+                                        user.updateUserEmail(email: newValue)
+                                    }
+                            }
+                    Spacer()
                 }
                 .padding()
                 
                 Spacer()
-                
+                    
                 VStack {
+                    Spacer()
+                        
                     NavigationLink (
-                        destination: UserProfileView().environmentObject(user),
+                        destination: ThankYouForSigningUpView().environmentObject(user).environmentObject(appTheme),
                         label: {
                             RoundedRectangle(cornerRadius: 25)
                                 .frame(width: 280, height: 40)
@@ -94,23 +91,19 @@ struct EnterNameAndEmailView: View {
                         })
                         .padding(8)
                         .disabled(!(user.isUserEmailValid() && user.isUserNameValid()))
-                    
-                    Text("By singing up, you agree to our Privacy Policy and \n Terms & Conditions")
-                        .font(.caption)
-                        .multilineTextAlignment(.center)
+                        
+                        Text("By singing up, you agree to our Privacy Policy and \n Terms & Conditions")
+                            .font(.caption)
+                            .multilineTextAlignment(.center)
                 }
-                
-                Spacer()
             }
         }
-        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         .ignoresSafeArea(.keyboard, edges: .all)
         .navigationTitle("Profile")
         .onAppear {
             user.updateUserName(name: name)
             user.updateUserEmail(email: email)
         }
-        // .edgesIgnoringSafeArea(.all)
     }
 }
 
