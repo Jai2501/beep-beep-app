@@ -41,7 +41,7 @@ struct ContentView: View {
                 .padding(5)
                 
                 NavigationLink(
-                    destination: DirectionAndGuidanceView(),
+                    destination: MainScreenView(),
                     label: {
                         RoundedRectangle(cornerRadius: 25)
                             .stroke(Color("b-orange"), lineWidth: 2)

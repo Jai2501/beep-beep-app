@@ -74,7 +74,6 @@ struct EnterPhoneNumberView: View {
                     }
                 )
                 .disabled(!isPhoneNumberValid())
-                
             }
         }
         .ignoresSafeArea(.keyboard, edges: .all)
