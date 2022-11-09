@@ -14,6 +14,7 @@ enum OtpField {
     case field4
     case field5
     case field6
+    case noField
 }
 
 struct EnterOtpView: View {
@@ -26,72 +27,61 @@ struct EnterOtpView: View {
     
     // Bind These Later from Previous View
     var countryCode: String = "+65"
-    var phoneNumer: String = "12345678"
-    
-//    var backgroundColor: Color = .red
-    
-    @State var otpCodeOne: String = "1"
-    
+    var phoneNumber: String = "12345678"
+
     var body: some View {
-        ZStack {
-            VStack {
-                Image("GetStartedBackground")
-                    .renderingMode(.template)
-                    .resizable()
-                    .scaledToFill()
-                    .foregroundColor(appTheme.theme.themeColor.opacity(0.3))
-                    .frame(width: UIScreen.main.bounds.width * 1.55)
-                    .padding(.bottom, UIScreen.main.bounds.height * 1.2)
-            }
-            .edgesIgnoringSafeArea(.all)
+        ZStack(alignment: .top) {
+            Color.clear
             
+            Image("GetStartedBackgroundCut")
+                .renderingMode(.template)
+                .resizable()
+                .scaledToFit()
+                .foregroundColor(appTheme.theme.themeColor.opacity(0.3))
+                .edgesIgnoringSafeArea(.all)
+            
+            VStack {
+                Spacer()
+                
+                Text("Enter the 6 digit code sent to")
+                    .bold()
+                
+                Text(countryCode + " " + phoneNumber)
+                    .bold()
+                
+                Spacer()
+                
+                OtpField()
+                
+                Spacer()
+                
                 VStack {
-                    Text("Enter the 6 digit code sent to")
-                        .bold()
-                    Text(countryCode + " " + phoneNumer)
-                        .bold()
+                    Text("Didn't receive it?")
+                        .foregroundColor(Color("b-orange"))
+                        .font(.footnote)
                     
-                    OtpField()
-                        .padding(.vertical, 60)
-                    
-                    VStack {
-                        Text("Didn't receive it?")
+                    Button {
+                        // Trigger Code for OTP Resend
+                        // Dummy purposes
+                    } label: {
+                        Text("Get a New Code")
                             .foregroundColor(Color("b-orange"))
+                            .bold()
                             .font(.footnote)
-                        
-                        Button {
-                            // Trigger Code for OTP Resend
-                            // Dummy purposes
-                        } label: {
-                            Text("Get a New Code")
-                                .foregroundColor(Color("b-orange"))
-                                .bold()
-                                .font(.footnote)
-                                .underline()
-                        }
+                            .underline()
                     }
-                    .padding(.bottom, 15)
+                }
+                
+                Spacer()
+            }
                     
-//                    Button {
-//                        // Verify OTP, and if Correct, take to next page :)
-//
-//                    } label: {
-//                        RoundedRectangle(cornerRadius: 25)
-//                            .frame(width: 270, height: 40)
-//                            .foregroundColor(Color("b-orange"))
-//                            .overlay(
-//                                Text("Verify")
-//                                    .foregroundColor(.white)
-//                                    .bold()
-//                            )
-//                    }
-//                    .padding(5)
-//                    .disabled(!checkAllFieldsFilled())
-//                    .opacity(checkAllFieldsFilled() ? 1 : 0.5)
-                    
+            ZStack(alignment: .bottom) {
+                
+                Color.clear
+                
+                VStack {
                     NavigationLink (
                         destination: EnterNameAndEmailView()
-//                            .environmentObject(otpModel)
                             .environmentObject(appTheme)
                             .environmentObject(user),
                         label: {
@@ -107,31 +97,35 @@ struct EnterOtpView: View {
                                 .disabled(!checkAllFieldsFilled())
                                 .opacity(checkAllFieldsFilled() ? 1 : 0.5)
                         })
-                        .padding(8)
-                        .disabled(!checkAllFieldsFilled())
+                    .padding(8)
+                    .disabled(!checkAllFieldsFilled())
+                    .focused($activeOtpField, equals: .noField)
                     
-                    Spacer()
+                    Text("By singing up, you agree to our Privacy Policy and \n Terms & Conditions")
+                        .font(.caption)
+                        .multilineTextAlignment(.center)
                 }
-                .frame(
-                    width: UIScreen.main.bounds.width,
-                    height: UIScreen.main.bounds.height)
-                .padding()
-                .onChange(of: otpModel.otpFields) { newValue in
-                    otpConditions(newValue: newValue)
-                }
-                .padding(.top, UIScreen.main.bounds.height * 0.4)
-                .ignoresSafeArea(.keyboard, edges: .bottom)
-                
             }
-            .onAppear {
-                // Put in a random number and go
-    //            Task { await otpModel.sendOtp() }
-                otpModel.updatePhoneNumberInRealtimeDatabase()
-                user.updateUserPhoneNumber(phoneNumber: otpModel.phoneNumber)
-            }
-            .navigationTitle("Verification")
-//            .ignoresSafeArea(.keyboard, edges: .bottom)
+        .onChange(of: otpModel.otpFields) { newValue in
+            otpConditions(newValue: newValue)
+        }
     }
+    .onAppear {
+        otpModel.updatePhoneNumberInRealtimeDatabase()
+        user.updateUserPhoneNumber(phoneNumber: otpModel.phoneNumber)
+    }
+    .ignoresSafeArea(.keyboard, edges: .all)
+    .navigationTitle("Verification")
+    .toolbar {
+        ToolbarItemGroup(placement: .keyboard) {
+            Spacer()
+            Button("Done") {
+                // To close the keyboard
+                activeOtpField = nil
+            }
+        }
+    }
+}
     
     @ViewBuilder
     func OtpField() -> some View {
