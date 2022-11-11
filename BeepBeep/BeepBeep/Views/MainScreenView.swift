@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct MainScreenView: View {
-    @State var test: String = ""
+    @State var isBookAvClicked: Bool = true
+    @State var isAboutAvsClicked: Bool = false
+    @State var isRewardsClicked: Bool = false
+    @State var isAccountClicked: Bool = false
     
     var body: some View {
         
@@ -103,6 +106,8 @@ struct MainScreenView: View {
                 
                 Spacer()
             }
+            
+            MainScreenBottomBarComponent(isBookAvClicked: $isBookAvClicked, isAboutAvsClicked: $isAboutAvsClicked, isRewardsClicked: $isRewardsClicked, isAccountClicked: $isAccountClicked)
         }
         .ignoresSafeArea(.keyboard)
         .navigationBarTitle("")
