@@ -15,40 +15,30 @@ struct LocationPickerForMapView: View {
         VStack {
             
             RoundedRectangle(cornerRadius: 10)
-                .fill(.cyan)
+                .fill(.clear)
                 .frame(width: 325, height: 54)
                 .overlay {
                     Picker("Please choose a color", selection: $selectedLocation) {
                         ForEach(RafflesCityPickUpDropOffPoints.allCases, id: \.self) { item in
                             
-                            RoundedRectangle(cornerRadius: 10)
-                                .fill(Color("b-light-turqoise-2"))
-                                .frame(width: 303, height: 25)
+                            RoundedRectangle(cornerRadius: 7)
+                                .fill(.clear)
+//                                .fill(Color("b-light-turqoise-2"))
+//                                .frame(width: 306, height: 29)
                                 .overlay {
                                     Text(rafflesCityLocation.getPickUpDropOffPointName(location: item))
                                         .foregroundColor(Color("b-black"))
                                 }
-  
-        //                    Text($0)
                         }
                     }
                     .pickerStyle(.wheel)
                 }
-            
-            
-//            Picker("Please choose a color", selection: $selectedLocation) {
-//                ForEach(RafflesCityPickUpDropOffPoints.allCases, id: \.self) { item in
-//                    Text(rafflesCityLocation.getPickUpDropOffPointName(location: item))
-////                    Text($0)
-//                }
-//            }
-//            .frame(maxWidth: UIScreen.main.bounds.width * 0.82, maxHeight: 80)
-//            .pickerStyle(.wheel)
-            //.frame(width: 200, height: 10)
-            
-//            Text("You selected: \(rafflesCityLocation.getPickUpDropOffPointName( location: selectedLocation))")
-//                .padding(.vertical, 20)
         }
+        .overlay(content: {
+            RoundedRectangle(cornerRadius: 10)
+                .stroke(Color("b-light-gray"))
+        })
+//        .border(Color("b-light-gray"))
         .frame(width: 325, height: 54)
         .clipped()
     }
