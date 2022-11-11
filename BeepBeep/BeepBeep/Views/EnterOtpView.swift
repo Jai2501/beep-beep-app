@@ -46,7 +46,7 @@ struct EnterOtpView: View {
                 Text("Enter the 6 digit code sent to")
                     .bold()
                 
-                Text(countryCode + " " + phoneNumber)
+                Text(otpModel.countryCode + " " + otpModel.phoneNumber)
                     .bold()
                 
                 Spacer()
