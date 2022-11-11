@@ -277,6 +277,7 @@ struct GetStartedView: View {
                                 Text("No special assistance required")
                                     .underline()
                                     .foregroundColor(Color("b-orange"))
+                                    .font(.footnote)
                             }
 
                         }
@@ -285,7 +286,6 @@ struct GetStartedView: View {
 
                         NavigationLink (
                             destination:
-//                                LogInView(),
                                 EnterPhoneNumberView()
                                 .environmentObject(appTheme)
                                 .environmentObject(user),
@@ -301,8 +301,13 @@ struct GetStartedView: View {
                                     .opacity(selectedAtleastOneProfileType() ? 1 : 0.5)
                                     .disabled(!selectedAtleastOneProfileType())
                         })
-                        .padding(8)
+                        .padding(.top, 8)
+                        .padding(.bottom, 4)
                         .disabled(!selectedAtleastOneProfileType())
+                        
+                        Text("Don’t worry, you can still change your ride options later.")
+                            .font(.custom("", size: 10))
+                            .foregroundColor(Color("b-black"))
                         
                         Spacer()
                     }
