@@ -11,12 +11,14 @@ struct GetStartedView: View {
     @ObservedObject var appTheme: ThemeViewModel = ThemeViewModel()
     @ObservedObject var user: UserViewModel = .init()
     
-    @State var isNoSpecialAssistanceRequired = false
+    @State var isNoSpecialAssistanceRequired: Bool = false
     
-    @State var isWheelChairUser = false
-    @State var isSeniorCitizenUser = false
-    @State var isVisualImpairmentUser = false
-    @State var isFamilyWithStrollers = false
+    @State var isWheelChairUser: Bool = false
+    @State var isSeniorCitizenUser: Bool = false
+    @State var isVisualImpairmentUser: Bool = false
+    @State var isFamilyWithStrollers: Bool = false
+    
+    @State var isWhiteTextRequired: Bool = false
     
     func selectedAtleastOneProfileType() -> Bool {
         return (isNoSpecialAssistanceRequired || isWheelChairUser || isSeniorCitizenUser || isVisualImpairmentUser || isFamilyWithStrollers)
@@ -51,6 +53,7 @@ struct GetStartedView: View {
         // Can add here an if condition for unchecking purposes and changing to orig background then
         appTheme.changeThemeToWheelChairUser()
         isWheelChairUser.toggle()
+        isWhiteTextRequired = true
         
         if (isSeniorCitizenUser) {
             isSeniorCitizenUser.toggle()
@@ -74,7 +77,7 @@ struct GetStartedView: View {
     func tappedOnSeniorCitizenUser() {
         appTheme.changeThemeToSeniorChairUser()
         isSeniorCitizenUser.toggle()
-        
+        isWhiteTextRequired = true
         
         if (isWheelChairUser) {
             isWheelChairUser.toggle()
@@ -98,6 +101,7 @@ struct GetStartedView: View {
     func tappedOnVisualImpairmentUser() {
         appTheme.changeThemeToVisualImpairmentUser()
         isVisualImpairmentUser.toggle()
+        isWhiteTextRequired = true
         
         if (isWheelChairUser) {
             isWheelChairUser.toggle()
@@ -121,6 +125,7 @@ struct GetStartedView: View {
     func tappedOnFamilyWithStrollerUser() {
         appTheme.changeThemeToFamilyWithStrollerUser()
         isFamilyWithStrollers.toggle()
+        isWhiteTextRequired = true
         
         if (isWheelChairUser) {
             isWheelChairUser.toggle()
@@ -144,6 +149,7 @@ struct GetStartedView: View {
     func tappedOnNoSpecialAssistanceUser() {
         isNoSpecialAssistanceRequired.toggle()
         appTheme.changeThemeToOrignalUser()
+        isWhiteTextRequired = false
         
         if (isWheelChairUser) {
             isWheelChairUser.toggle()
@@ -183,15 +189,18 @@ struct GetStartedView: View {
                         Text("Welcome!")
                             .font(.headline)
                             .padding(.top, 115)
+                            .foregroundColor(isWhiteTextRequired ? .white : Color("b-black"))
                         
                         Text("Help us get to know you, \n to better serve your needs!")
                             .font(.headline)
                             .padding(.top, 8)
                             .multilineTextAlignment(.center)
+                            .foregroundColor(isWhiteTextRequired ? .white : Color("b-black"))
                         
                         Text("Dont worry, you can still change your ride options later")
                             .font(.caption)
                             .padding(.top, 8)
+                            .foregroundColor(isWhiteTextRequired ? .white : Color("b-black"))
                         
                         Text("Are you a...")
                             .font(.headline)
@@ -254,25 +263,28 @@ struct GetStartedView: View {
                         
                         Toggle(isOn: $isNoSpecialAssistanceRequired) {
                             HStack {
-                                RoundedRectangle(cornerRadius: 3)
-                                    .fill(isNoSpecialAssistanceRequired ? .orange : .white)
-                                    .frame(width: 20, height: 20)
-                                    .border(isNoSpecialAssistanceRequired ? .white : .orange)
-                                    .cornerRadius(3)
-                                    .overlay {
-                                        if (isNoSpecialAssistanceRequired) {
-    //                                        Image(systemName: "checkmark")
-    //                                            .fill(.white)
-    //                                            .frame(width: 10, height: 10)
-                                            
-                                            Circle()
-                                                .fill(.white)
-                                                .frame(width: 10, height: 10)
-                                        }
-                                    }
-                                    .onTapGesture {
-                                        tappedOnNoSpecialAssistanceUser()
-                                    }
+//                                RoundedRectangle(cornerRadius: 3)
+//                                    .fill(isNoSpecialAssistanceRequired ? .orange : .white)
+//                                    .frame(width: 20, height: 20)
+//                                    .border(isNoSpecialAssistanceRequired ? .white : .orange)
+//                                    .cornerRadius(3)
+//                                    .overlay {
+//                                        if (isNoSpecialAssistanceRequired) {
+////                                            RoundedRectangle(cornerRadius: 20)
+////                                                .overlay {
+////                                                    Image(systemName: "checkmark")
+////                                                        .fill(.white)
+////                                                        .frame(width: 10, height: 10)
+////                                                }
+//
+//                                            Circle()
+//                                                .fill(.white)
+//                                                .frame(width: 10, height: 10)
+//                                        }
+//                                    }
+//                                    .onTapGesture {
+//                                        tappedOnNoSpecialAssistanceUser()
+//                                    }
                                 
                                 Text("No special assistance required")
                                     .underline()
@@ -282,7 +294,7 @@ struct GetStartedView: View {
 
                         }
                         .tint(.clear)
-                        .toggleStyle(.button)
+                        .toggleStyle(CheckToggleStyle())
 
                         NavigationLink (
                             destination:
@@ -291,7 +303,7 @@ struct GetStartedView: View {
                                 .environmentObject(user),
                             label: {
                                 RoundedRectangle(cornerRadius: 25)
-                                    .frame(width: 270, height: 40)
+                                    .frame(width: 300, height: 39)
                                     .foregroundColor(Color("b-orange"))
                                     .overlay(
                                         Text("Next")
@@ -317,6 +329,24 @@ struct GetStartedView: View {
         }
         .navigationTitle("Get Started")
 //        .environmentObject(appTheme)
+    }
+}
+
+struct CheckToggleStyle: ToggleStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        Button {
+            configuration.isOn.toggle()
+        } label: {
+            Label {
+                configuration.label
+            } icon: {
+                Image(systemName: configuration.isOn ? "checkmark.square.fill" : "square")
+                    .foregroundColor(configuration.isOn ? Color("b-orange") : Color("b-orange"))
+                    .accessibility(label: Text(configuration.isOn ? "Checked" : "Unchecked"))
+                    .imageScale(.large)
+            }
+        }
+        .buttonStyle(PlainButtonStyle())
     }
 }
 
