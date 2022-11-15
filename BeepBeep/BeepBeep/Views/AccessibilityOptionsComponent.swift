@@ -44,7 +44,7 @@ struct AccessibilityOptionsComponent: View {
                     .overlay {
                         Image(systemName: "speaker.wave.3.fill")
                             .font(.title2)
-                            .foregroundColor(Color("b-black"))
+                            .foregroundColor(isAudioGuideActive ? .white : Color("b-black"))
                 }
                 
                 Text("Audio guide")
@@ -62,10 +62,10 @@ struct AccessibilityOptionsComponent: View {
                     .frame(width: 63, height: 63)
                     .overlay {
                         Image("PhoneVibrateIcon")
-                            //.renderingMode(.template)
+                            .renderingMode(.template)
                             .resizable()
                             .frame(width: 28, height: 25)
-                            .foregroundColor(.white)
+                            .foregroundColor(isVibrationGuideActive ? .white : Color("b-black"))
                 }
                 
                 Text("Vibration when near")
@@ -84,16 +84,25 @@ struct AccessibilityOptionsComponent: View {
                     .frame(width: 63, height: 63)
                     .overlay {
                         Image("ExtraTimeIcon")
-                            //.renderingMode(.template)
+                            .renderingMode(.template)
                             .resizable()
                             .frame(width: 28, height: 25)
+                            .foregroundColor(isRequiringExtraTime ? .white : Color("b-black"))
+                            .overlay(alignment: .bottomTrailing) {
+                                Image(systemName: "plus")
+                                    .foregroundColor(isRequiringExtraTime ? .cyan : Color("b-light-turqoise-2"))
+                                    .font(.system(size: 8))
+                                    .bold()
+                                    .padding(.bottom, 2)
+                                    .padding(.trailing, 1)
+                            }
 //                            .overlay(alignment: .bottomTrailing) {
 //                                Image(systemName: "plus.circle.fill")
 //                                    .padding(50)
 //                                    
 //                            }
 //                            .foregroundColor(.white)
-                }
+                    }
                 
                 Text("Extra Time")
                     .foregroundColor(Color("b-black"))
