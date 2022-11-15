@@ -44,6 +44,9 @@ struct FoundAnAvView: View {
                 .border(.blue)
                 .padding()
                 .border(.red)
+            
+            BottomTabBar()
+                .padding(.top, UIScreen.main.bounds.height * 0.87)
         }
         .ignoresSafeArea(.keyboard, edges: .all)
     }

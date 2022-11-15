@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct RideTypesComponent: View {
+    
     var body: some View {
         ScrollView(.horizontal) {
-            HStack(spacing: 8) {
+            HStack {
                 ForEach(0..<3) { item in
                     GeometryReader { geometry in
                         ZStack {
@@ -18,6 +19,7 @@ struct RideTypesComponent: View {
                                 .fill(.cyan)
                                 .frame(width: 150, height: 150)
                                 .border(.black)
+//                                .padding(.leading, UIScreen.main.bounds.width * (geometry.frame(in: .global).minX / 153) * CGFloat(item.magnitude))
                                 .scaleEffect(
                                 (geometry.frame(in: .global).minX / 153 >= 0.5) && (geometry.frame(in: .global).minX / 153) <= 1.2 ? 1 : 0.75)
                         }

@@ -7,12 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3918ED6C2923621D00E775A1 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3918ED6B2923621D00E775A1 /* SettingsView.swift */; };
 		3944E237291537340052B189 /* GetStartedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3944E236291537340052B189 /* GetStartedView.swift */; };
+		3961CB4C29205BB80045B0B9 /* AccessibilityOptionsComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3961CB4B29205BB80045B0B9 /* AccessibilityOptionsComponent.swift */; };
 		396260692916BA4100C3BFBE /* OtpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396260682916BA4100C3BFBE /* OtpViewModel.swift */; };
+		3975780429211E93005EE698 /* AvArrivedAndControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3975780329211E92005EE698 /* AvArrivedAndControlView.swift */; };
+		3975780629214B98005EE698 /* WelcomeOnboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3975780529214B98005EE698 /* WelcomeOnboardView.swift */; };
 		397BCD8B28F405FB00A9FDF6 /* BeepBeepApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397BCD8A28F405FB00A9FDF6 /* BeepBeepApp.swift */; };
 		397BCD8D28F405FB00A9FDF6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397BCD8C28F405FB00A9FDF6 /* ContentView.swift */; };
 		397BCD8F28F405FD00A9FDF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 397BCD8E28F405FD00A9FDF6 /* Assets.xcassets */; };
 		397BCD9228F405FD00A9FDF6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 397BCD9128F405FD00A9FDF6 /* Preview Assets.xcassets */; };
+		397E4340291C0BA300226693 /* SelectDropLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397E433F291C0BA300226693 /* SelectDropLocationView.swift */; };
+		3993A2E4291AAF5800BEDCC2 /* SampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3993A2E3291AAF5800BEDCC2 /* SampleView.swift */; };
 		399D39F529155B8E006826F7 /* ThemeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399D39F429155B8E006826F7 /* ThemeModel.swift */; };
 		399D39F829155CE4006826F7 /* ThemeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399D39F729155CE4006826F7 /* ThemeViewModel.swift */; };
 		399D39FA29157712006826F7 /* UserProfileSelectionComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399D39F929157711006826F7 /* UserProfileSelectionComponent.swift */; };
@@ -24,10 +30,19 @@
 		39B7EE96291A172000778C3A /* CompassMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B7EE95291A172000778C3A /* CompassMarkerView.swift */; };
 		39B7EE98291A1A5B00778C3A /* CompassHeading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B7EE97291A1A5B00778C3A /* CompassHeading.swift */; };
 		39B7EE9A291A1C9800778C3A /* CompassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B7EE99291A1C9800778C3A /* CompassView.swift */; };
-		39B7EE9C291A1D7C00778C3A /* DirectionAndGuidanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B7EE9B291A1D7C00778C3A /* DirectionAndGuidanceView.swift */; };
+		39B7EE9C291A1D7C00778C3A /* DirectionAndGuidanceComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B7EE9B291A1D7C00778C3A /* DirectionAndGuidanceComponent.swift */; };
 		39B7EE9E291A371A00778C3A /* BottomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B7EE9D291A371A00778C3A /* BottomTabBar.swift */; };
+		39B7EEA0291A5EA200778C3A /* MainScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B7EE9F291A5EA200778C3A /* MainScreenView.swift */; };
+		39B7EEA2291A7A1D00778C3A /* ThankYouForSigningUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B7EEA1291A7A1D00778C3A /* ThankYouForSigningUpView.swift */; };
 		39C125BF2913F0DB00E5B441 /* GetStartedViewWaveBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C125BE2913F0DB00E5B441 /* GetStartedViewWaveBackground.swift */; };
 		39C125C12913F2B900E5B441 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C125C02913F2B900E5B441 /* LogInView.swift */; };
+		39C95965291E3CDD00070C77 /* SelectRideTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C95964291E3CDD00070C77 /* SelectRideTypeView.swift */; };
+		39C95967291E4EDB00070C77 /* RideTypesComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C95966291E4EDB00070C77 /* RideTypesComponent.swift */; };
+		39C95969291EAB1400070C77 /* SelectRideTypeBottomComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C95968291EAB1400070C77 /* SelectRideTypeBottomComponent.swift */; };
+		39C9596B291EBD1400070C77 /* MainScreenBottomBarComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C9596A291EBD1400070C77 /* MainScreenBottomBarComponent.swift */; };
+		39C9596D291F6B5D00070C77 /* SearchAndFindAvView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C9596C291F6B5C00070C77 /* SearchAndFindAvView.swift */; };
+		39C9596F291F6E3F00070C77 /* AvKnowledgeCardsComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C9596E291F6E3F00070C77 /* AvKnowledgeCardsComponent.swift */; };
+		39C95971291F81C300070C77 /* CarNumberAndTimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C95970291F81C300070C77 /* CarNumberAndTimerViewModel.swift */; };
 		39D4DB5F29176D700066D333 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 39D4DB5E29176D6F0066D333 /* GoogleService-Info.plist */; };
 		39D4DB6329176F7A0066D333 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 39D4DB6229176F7A0066D333 /* FirebaseAuth */; };
 		39D4DB6529176F7A0066D333 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 39D4DB6429176F7A0066D333 /* FirebaseDatabase */; };
@@ -37,16 +52,30 @@
 		39D4DB6D29177F8E0066D333 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D4DB6C29177F8E0066D333 /* UserModel.swift */; };
 		39E0B3692917E95200510A5F /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E0B3682917E95200510A5F /* UserViewModel.swift */; };
 		39E0B36B2918048900510A5F /* EnterNameAndEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E0B36A2918048800510A5F /* EnterNameAndEmailView.swift */; };
+		39E39BC7291D57A700B34BAC /* PreviousVisitedLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E39BC6291D57A700B34BAC /* PreviousVisitedLocationView.swift */; };
+		39E39BC9291D666200B34BAC /* ChooseDestinationFromMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E39BC8291D666200B34BAC /* ChooseDestinationFromMapView.swift */; };
+		39E39BCB291D68D000B34BAC /* LocationCoordinatesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E39BCA291D68D000B34BAC /* LocationCoordinatesModel.swift */; };
+		39E39BCD291D690D00B34BAC /* LocationCoordinatesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E39BCC291D690D00B34BAC /* LocationCoordinatesViewModel.swift */; };
+		39E39BD0291DF7F200B34BAC /* LocationPickerForMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E39BCF291DF7F200B34BAC /* LocationPickerForMapView.swift */; };
+		39E39BD2291DF91500B34BAC /* RafflesCityLocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E39BD1291DF91500B34BAC /* RafflesCityLocationViewModel.swift */; };
+		39E39BD4291E216400B34BAC /* LocationMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E39BD3291E216400B34BAC /* LocationMarker.swift */; };
+		39F86675292010110069F412 /* GuidanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F86674292010110069F412 /* GuidanceView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3918ED6B2923621D00E775A1 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		3944E236291537340052B189 /* GetStartedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartedView.swift; sourceTree = "<group>"; };
+		3961CB4B29205BB80045B0B9 /* AccessibilityOptionsComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityOptionsComponent.swift; sourceTree = "<group>"; };
 		396260682916BA4100C3BFBE /* OtpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtpViewModel.swift; sourceTree = "<group>"; };
+		3975780329211E92005EE698 /* AvArrivedAndControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvArrivedAndControlView.swift; sourceTree = "<group>"; };
+		3975780529214B98005EE698 /* WelcomeOnboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeOnboardView.swift; sourceTree = "<group>"; };
 		397BCD8728F405FB00A9FDF6 /* BeepBeep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeepBeep.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		397BCD8A28F405FB00A9FDF6 /* BeepBeepApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeepBeepApp.swift; sourceTree = "<group>"; };
 		397BCD8C28F405FB00A9FDF6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		397BCD8E28F405FD00A9FDF6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		397BCD9128F405FD00A9FDF6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		397E433F291C0BA300226693 /* SelectDropLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDropLocationView.swift; sourceTree = "<group>"; };
+		3993A2E3291AAF5800BEDCC2 /* SampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleView.swift; sourceTree = "<group>"; };
 		399D39F429155B8E006826F7 /* ThemeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeModel.swift; sourceTree = "<group>"; };
 		399D39F729155CE4006826F7 /* ThemeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeViewModel.swift; sourceTree = "<group>"; };
 		399D39F929157711006826F7 /* UserProfileSelectionComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileSelectionComponent.swift; sourceTree = "<group>"; };
@@ -58,15 +87,32 @@
 		39B7EE95291A172000778C3A /* CompassMarkerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompassMarkerView.swift; sourceTree = "<group>"; };
 		39B7EE97291A1A5B00778C3A /* CompassHeading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompassHeading.swift; sourceTree = "<group>"; };
 		39B7EE99291A1C9800778C3A /* CompassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompassView.swift; sourceTree = "<group>"; };
-		39B7EE9B291A1D7C00778C3A /* DirectionAndGuidanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionAndGuidanceView.swift; sourceTree = "<group>"; };
+		39B7EE9B291A1D7C00778C3A /* DirectionAndGuidanceComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionAndGuidanceComponent.swift; sourceTree = "<group>"; };
 		39B7EE9D291A371A00778C3A /* BottomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTabBar.swift; sourceTree = "<group>"; };
+		39B7EE9F291A5EA200778C3A /* MainScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenView.swift; sourceTree = "<group>"; };
+		39B7EEA1291A7A1D00778C3A /* ThankYouForSigningUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThankYouForSigningUpView.swift; sourceTree = "<group>"; };
 		39C125BE2913F0DB00E5B441 /* GetStartedViewWaveBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartedViewWaveBackground.swift; sourceTree = "<group>"; };
 		39C125C02913F2B900E5B441 /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
+		39C95964291E3CDD00070C77 /* SelectRideTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectRideTypeView.swift; sourceTree = "<group>"; };
+		39C95966291E4EDB00070C77 /* RideTypesComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideTypesComponent.swift; sourceTree = "<group>"; };
+		39C95968291EAB1400070C77 /* SelectRideTypeBottomComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectRideTypeBottomComponent.swift; sourceTree = "<group>"; };
+		39C9596A291EBD1400070C77 /* MainScreenBottomBarComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenBottomBarComponent.swift; sourceTree = "<group>"; };
+		39C9596C291F6B5C00070C77 /* SearchAndFindAvView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAndFindAvView.swift; sourceTree = "<group>"; };
+		39C9596E291F6E3F00070C77 /* AvKnowledgeCardsComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvKnowledgeCardsComponent.swift; sourceTree = "<group>"; };
+		39C95970291F81C300070C77 /* CarNumberAndTimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarNumberAndTimerViewModel.swift; sourceTree = "<group>"; };
 		39D4DB5E29176D6F0066D333 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		39D4DB6029176DA80066D333 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		39D4DB6C29177F8E0066D333 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		39E0B3682917E95200510A5F /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		39E0B36A2918048800510A5F /* EnterNameAndEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterNameAndEmailView.swift; sourceTree = "<group>"; };
+		39E39BC6291D57A700B34BAC /* PreviousVisitedLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousVisitedLocationView.swift; sourceTree = "<group>"; };
+		39E39BC8291D666200B34BAC /* ChooseDestinationFromMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseDestinationFromMapView.swift; sourceTree = "<group>"; };
+		39E39BCA291D68D000B34BAC /* LocationCoordinatesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCoordinatesModel.swift; sourceTree = "<group>"; };
+		39E39BCC291D690D00B34BAC /* LocationCoordinatesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCoordinatesViewModel.swift; sourceTree = "<group>"; };
+		39E39BCF291DF7F200B34BAC /* LocationPickerForMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPickerForMapView.swift; sourceTree = "<group>"; };
+		39E39BD1291DF91500B34BAC /* RafflesCityLocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RafflesCityLocationViewModel.swift; sourceTree = "<group>"; };
+		39E39BD3291E216400B34BAC /* LocationMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationMarker.swift; sourceTree = "<group>"; };
+		39F86674292010110069F412 /* GuidanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuidanceView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,10 +183,29 @@
 				39E0B36A2918048800510A5F /* EnterNameAndEmailView.swift */,
 				39B7EE8D291A0C2200778C3A /* UserProfileView.swift */,
 				39B7EE8F291A0EB600778C3A /* FoundAnAvView.swift */,
+				39B7EE9D291A371A00778C3A /* BottomTabBar.swift */,
 				39B7EE95291A172000778C3A /* CompassMarkerView.swift */,
 				39B7EE99291A1C9800778C3A /* CompassView.swift */,
-				39B7EE9B291A1D7C00778C3A /* DirectionAndGuidanceView.swift */,
-				39B7EE9D291A371A00778C3A /* BottomTabBar.swift */,
+				39B7EEA1291A7A1D00778C3A /* ThankYouForSigningUpView.swift */,
+				3993A2E3291AAF5800BEDCC2 /* SampleView.swift */,
+				39B7EE9F291A5EA200778C3A /* MainScreenView.swift */,
+				39C9596A291EBD1400070C77 /* MainScreenBottomBarComponent.swift */,
+				397E433F291C0BA300226693 /* SelectDropLocationView.swift */,
+				39E39BC6291D57A700B34BAC /* PreviousVisitedLocationView.swift */,
+				39E39BC8291D666200B34BAC /* ChooseDestinationFromMapView.swift */,
+				39E39BCF291DF7F200B34BAC /* LocationPickerForMapView.swift */,
+				39E39BD3291E216400B34BAC /* LocationMarker.swift */,
+				39C95964291E3CDD00070C77 /* SelectRideTypeView.swift */,
+				39C95966291E4EDB00070C77 /* RideTypesComponent.swift */,
+				39C95968291EAB1400070C77 /* SelectRideTypeBottomComponent.swift */,
+				39C9596C291F6B5C00070C77 /* SearchAndFindAvView.swift */,
+				39C9596E291F6E3F00070C77 /* AvKnowledgeCardsComponent.swift */,
+				39F86674292010110069F412 /* GuidanceView.swift */,
+				39B7EE9B291A1D7C00778C3A /* DirectionAndGuidanceComponent.swift */,
+				3961CB4B29205BB80045B0B9 /* AccessibilityOptionsComponent.swift */,
+				3975780329211E92005EE698 /* AvArrivedAndControlView.swift */,
+				3975780529214B98005EE698 /* WelcomeOnboardView.swift */,
+				3918ED6B2923621D00E775A1 /* SettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -152,6 +217,9 @@
 				396260682916BA4100C3BFBE /* OtpViewModel.swift */,
 				39E0B3682917E95200510A5F /* UserViewModel.swift */,
 				39B7EE97291A1A5B00778C3A /* CompassHeading.swift */,
+				39E39BCC291D690D00B34BAC /* LocationCoordinatesViewModel.swift */,
+				39E39BD1291DF91500B34BAC /* RafflesCityLocationViewModel.swift */,
+				39C95970291F81C300070C77 /* CarNumberAndTimerViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -162,6 +230,7 @@
 				399D39F429155B8E006826F7 /* ThemeModel.swift */,
 				39D4DB6C29177F8E0066D333 /* UserModel.swift */,
 				39B7EE93291A16DF00778C3A /* Marker.swift */,
+				39E39BCA291D68D000B34BAC /* LocationCoordinatesModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -250,22 +319,45 @@
 				39B7EE9A291A1C9800778C3A /* CompassView.swift in Sources */,
 				399D39FA29157712006826F7 /* UserProfileSelectionComponent.swift in Sources */,
 				399D39FE29167731006826F7 /* EnterOtpView.swift in Sources */,
+				39E39BCD291D690D00B34BAC /* LocationCoordinatesViewModel.swift in Sources */,
+				39E39BD0291DF7F200B34BAC /* LocationPickerForMapView.swift in Sources */,
+				3975780429211E93005EE698 /* AvArrivedAndControlView.swift in Sources */,
 				397BCD8D28F405FB00A9FDF6 /* ContentView.swift in Sources */,
 				399D39FC291589DE006826F7 /* EnterPhoneNumberView.swift in Sources */,
-				39B7EE9C291A1D7C00778C3A /* DirectionAndGuidanceView.swift in Sources */,
+				39B7EE9C291A1D7C00778C3A /* DirectionAndGuidanceComponent.swift in Sources */,
+				39C95965291E3CDD00070C77 /* SelectRideTypeView.swift in Sources */,
+				39E39BD4291E216400B34BAC /* LocationMarker.swift in Sources */,
 				39C125BF2913F0DB00E5B441 /* GetStartedViewWaveBackground.swift in Sources */,
 				39B7EE98291A1A5B00778C3A /* CompassHeading.swift in Sources */,
 				39B7EE9E291A371A00778C3A /* BottomTabBar.swift in Sources */,
 				39C125C12913F2B900E5B441 /* LogInView.swift in Sources */,
 				399D39F529155B8E006826F7 /* ThemeModel.swift in Sources */,
+				39C9596B291EBD1400070C77 /* MainScreenBottomBarComponent.swift in Sources */,
+				39B7EEA0291A5EA200778C3A /* MainScreenView.swift in Sources */,
+				3961CB4C29205BB80045B0B9 /* AccessibilityOptionsComponent.swift in Sources */,
+				39C95969291EAB1400070C77 /* SelectRideTypeBottomComponent.swift in Sources */,
+				39C9596D291F6B5D00070C77 /* SearchAndFindAvView.swift in Sources */,
 				39E0B36B2918048900510A5F /* EnterNameAndEmailView.swift in Sources */,
 				397BCD8B28F405FB00A9FDF6 /* BeepBeepApp.swift in Sources */,
 				396260692916BA4100C3BFBE /* OtpViewModel.swift in Sources */,
+				39E39BCB291D68D000B34BAC /* LocationCoordinatesModel.swift in Sources */,
 				39B7EE8E291A0C2200778C3A /* UserProfileView.swift in Sources */,
 				39B7EE90291A0EB600778C3A /* FoundAnAvView.swift in Sources */,
+				39E39BC7291D57A700B34BAC /* PreviousVisitedLocationView.swift in Sources */,
 				39E0B3692917E95200510A5F /* UserViewModel.swift in Sources */,
+				39F86675292010110069F412 /* GuidanceView.swift in Sources */,
+				3918ED6C2923621D00E775A1 /* SettingsView.swift in Sources */,
+				39E39BD2291DF91500B34BAC /* RafflesCityLocationViewModel.swift in Sources */,
+				3975780629214B98005EE698 /* WelcomeOnboardView.swift in Sources */,
+				397E4340291C0BA300226693 /* SelectDropLocationView.swift in Sources */,
+				39C95967291E4EDB00070C77 /* RideTypesComponent.swift in Sources */,
+				39C9596F291F6E3F00070C77 /* AvKnowledgeCardsComponent.swift in Sources */,
+				39B7EEA2291A7A1D00778C3A /* ThankYouForSigningUpView.swift in Sources */,
+				39E39BC9291D666200B34BAC /* ChooseDestinationFromMapView.swift in Sources */,
 				399D39F829155CE4006826F7 /* ThemeViewModel.swift in Sources */,
+				3993A2E4291AAF5800BEDCC2 /* SampleView.swift in Sources */,
 				39B7EE96291A172000778C3A /* CompassMarkerView.swift in Sources */,
+				39C95971291F81C300070C77 /* CarNumberAndTimerViewModel.swift in Sources */,
 				39D4DB6D29177F8E0066D333 /* UserModel.swift in Sources */,
 				3944E237291537340052B189 /* GetStartedView.swift in Sources */,
 				39B7EE94291A16DF00778C3A /* Marker.swift in Sources */,

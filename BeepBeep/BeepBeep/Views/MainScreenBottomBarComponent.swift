@@ -10,8 +10,7 @@ import SwiftUI
 struct MainScreenBottomBarComponent: View {
     @Binding var isBookAvClicked: Bool
     @Binding var isAboutAvsClicked: Bool
-    @Binding var isRewardsClicked: Bool
-    @Binding var isAccountClicked: Bool
+    @Binding var isSettingsClicked: Bool
     
     func tappedOnBookAv() {
         isBookAvClicked = true
@@ -20,12 +19,8 @@ struct MainScreenBottomBarComponent: View {
             isAboutAvsClicked.toggle()
         }
         
-        if (isRewardsClicked) {
-            isRewardsClicked.toggle()
-        }
-        
-        if (isAccountClicked) {
-            isAccountClicked.toggle()
+        if (isSettingsClicked) {
+            isSettingsClicked.toggle()
         }
     }
     
@@ -36,17 +31,13 @@ struct MainScreenBottomBarComponent: View {
             isBookAvClicked.toggle()
         }
         
-        if (isRewardsClicked) {
-            isRewardsClicked.toggle()
-        }
-        
-        if (isAccountClicked) {
-            isAccountClicked.toggle()
+        if (isSettingsClicked) {
+            isSettingsClicked.toggle()
         }
     }
     
-    func tappedOnRewards() {
-        isRewardsClicked = true
+    func tappedOnSettings() {
+        isSettingsClicked = true
         
         if (isBookAvClicked) {
             isBookAvClicked.toggle()
@@ -54,26 +45,6 @@ struct MainScreenBottomBarComponent: View {
         
         if (isAboutAvsClicked) {
             isAboutAvsClicked.toggle()
-        }
-        
-        if (isAccountClicked) {
-            isAccountClicked.toggle()
-        }
-    }
-    
-    func tappedOnAccount() {
-        isAccountClicked = true
-        
-        if (isBookAvClicked) {
-            isBookAvClicked.toggle()
-        }
-        
-        if (isAboutAvsClicked) {
-            isAboutAvsClicked.toggle()
-        }
-        
-        if (isRewardsClicked) {
-            isRewardsClicked.toggle()
         }
     }
     
@@ -125,7 +96,7 @@ struct MainScreenBottomBarComponent: View {
                 Spacer()
                 
                 VStack {
-                    Image(systemName: "tag")
+                    Image(systemName: "gearshape.fill")
                         .font(.title3)
                         .padding(.bottom, 0.1)
 
@@ -134,29 +105,10 @@ struct MainScreenBottomBarComponent: View {
                         .padding(.top, -5)
                 }
                 .bold()
-                .foregroundColor(isRewardsClicked ? Color("b-turqoise") : Color("b-light-gray-1"))
+                .foregroundColor(isSettingsClicked ? Color("b-turqoise") : Color("b-light-gray-1"))
                 .onTapGesture {
-                    tappedOnRewards()
+                    tappedOnSettings()
                 }
-                
-                
-                Spacer()
-                
-                VStack {
-                    Image(systemName: "person.crop.circle.fill")
-                        .font(.title3)
-                        .padding(.bottom, 0)
-
-                    Text("Account")
-                        .font(.caption)
-                        .padding(.top, -0.1)
-                }
-                .bold()
-                .foregroundColor(isAccountClicked ? Color("b-turqoise") : Color("b-light-gray-1"))
-                .onTapGesture {
-                    tappedOnAccount()
-                }
-                
                 
                 Spacer()
             }
