@@ -55,7 +55,7 @@ struct LocationPickerForMapView: View {
                     RoundedRectangle(cornerRadius: 10)
                         .stroke(Color("b-light-gray"))
                 })
-                .frame(width: 325, height: 54)
+                .frame(width: 325, height: 64)
                 .clipped()
                 .padding(.top, 1)
                 
