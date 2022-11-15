@@ -22,7 +22,7 @@ class ThemeViewModel: ObservableObject {
             themeColor: Color("b-light-orange"),
             themeGradientColor: LinearGradient(
                 colors: [orignalColor,
-                         orignalColor.opacity(0.25)],
+                         orignalColor.opacity(0)],
                 startPoint: .top,
                 endPoint: .bottom)
         )
@@ -33,7 +33,7 @@ class ThemeViewModel: ObservableObject {
             themeColor: Color("b-teal"),
             themeGradientColor: LinearGradient(
                 colors: [wheelChairColor,
-                         wheelChairColor.opacity(0.5)],
+                         wheelChairColor.opacity(0.6587)],
                 startPoint: .top,
                 endPoint: .bottom)
         )
@@ -44,7 +44,7 @@ class ThemeViewModel: ObservableObject {
             themeColor: Color("b-blue"),
             themeGradientColor: LinearGradient(
                 colors: [seniorCitizenColor,
-                         seniorCitizenColor.opacity(0.5)],
+                         seniorCitizenColor.opacity(0.5612)],
                 startPoint: .top,
                 endPoint: .bottom)
         )
@@ -55,7 +55,7 @@ class ThemeViewModel: ObservableObject {
             themeColor: Color("b-dark-blue"),
             themeGradientColor: LinearGradient(
                 colors: [visualImpairmentColor,
-                         visualImpairmentColor.opacity(0.5)],
+                         visualImpairmentColor.opacity(0.5628)],
                 startPoint: .top,
                 endPoint: .bottom)
         )
@@ -66,7 +66,7 @@ class ThemeViewModel: ObservableObject {
             themeColor: Color("b-purple"),
             themeGradientColor: LinearGradient(
                 colors: [familyWithStrollerColor,
-                         familyWithStrollerColor.opacity(0.5)],
+                         familyWithStrollerColor.opacity(0.5635)],
                 startPoint: .top,
                 endPoint: .bottom)
         )
@@ -77,7 +77,7 @@ class ThemeViewModel: ObservableObject {
             themeColor: Color("b-light-orange"),
             themeGradientColor: LinearGradient(
                 colors: [Color("b-light-orange"),
-                         Color("b-light-orange").opacity(0.25)],
+                         Color("b-light-orange").opacity(0)],
                 startPoint: .top,
                 endPoint: .bottom)
         )
