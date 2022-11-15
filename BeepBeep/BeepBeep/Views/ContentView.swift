@@ -30,7 +30,7 @@ struct ContentView: View {
                     destination: GetStartedView(),
                     label: {
                         RoundedRectangle(cornerRadius: 25)
-                            .frame(width: 250, height: 40)
+                            .frame(width: 300, height: 39)
                             .foregroundColor(Color("b-orange"))
                             .overlay(
                                 Text("Sign Up")
@@ -45,7 +45,7 @@ struct ContentView: View {
                     label: {
                         RoundedRectangle(cornerRadius: 25)
                             .stroke(Color("b-orange"), lineWidth: 2)
-                            .frame(width: 250, height: 40)
+                            .frame(width: 300, height: 39)
                             .foregroundColor(.white)
                             .overlay(
                                 Text("Log In")
