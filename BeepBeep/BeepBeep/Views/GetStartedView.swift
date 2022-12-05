@@ -185,10 +185,19 @@ struct GetStartedView: View {
                     height: UIScreen.main.bounds.height
                 )
                 .overlay {
+                    Spacer()
+                    
                     VStack {
+                        Text("Get Started")
+                            .font(.headline)
+                            .padding(.top, 57)
+                            .padding(.bottom, 33)
+                            .foregroundColor(isWhiteTextRequired ? .white : Color("b-black"))
+                        
+                        
                         Text("Welcome!")
                             .font(.headline)
-                            .padding(.top, 115)
+                            //.padding(.top, 115)
                             .foregroundColor(isWhiteTextRequired ? .white : Color("b-black"))
                         
                         Text("Help us get to know you, \n to better serve your needs!")
@@ -291,10 +300,16 @@ struct GetStartedView: View {
                                     .foregroundColor(Color("b-orange"))
                                     .font(.footnote)
                             }
+                            .onTapGesture {
+                                tappedOnNoSpecialAssistanceUser()
+                            }
 
                         }
                         .tint(.clear)
                         .toggleStyle(CheckToggleStyle())
+                        .onTapGesture {
+                            tappedOnNoSpecialAssistanceUser()
+                        }
 
                         NavigationLink (
                             destination:
@@ -328,6 +343,7 @@ struct GetStartedView: View {
                 .compositingGroup()
         }
         .navigationTitle("Get Started")
+        .navigationBarHidden(true)
 //        .environmentObject(appTheme)
     }
 }

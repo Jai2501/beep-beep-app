@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3918ED6C2923621D00E775A1 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3918ED6B2923621D00E775A1 /* SettingsView.swift */; };
+		391A0A63292760500063C3BD /* TwitterClone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391A0A62292760500063C3BD /* TwitterClone.swift */; };
 		3944E237291537340052B189 /* GetStartedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3944E236291537340052B189 /* GetStartedView.swift */; };
 		3961CB4C29205BB80045B0B9 /* AccessibilityOptionsComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3961CB4B29205BB80045B0B9 /* AccessibilityOptionsComponent.swift */; };
 		396260692916BA4100C3BFBE /* OtpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396260682916BA4100C3BFBE /* OtpViewModel.swift */; };
@@ -64,6 +65,7 @@
 
 /* Begin PBXFileReference section */
 		3918ED6B2923621D00E775A1 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		391A0A62292760500063C3BD /* TwitterClone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterClone.swift; sourceTree = "<group>"; };
 		3944E236291537340052B189 /* GetStartedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartedView.swift; sourceTree = "<group>"; };
 		3961CB4B29205BB80045B0B9 /* AccessibilityOptionsComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityOptionsComponent.swift; sourceTree = "<group>"; };
 		396260682916BA4100C3BFBE /* OtpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtpViewModel.swift; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 				3975780329211E92005EE698 /* AvArrivedAndControlView.swift */,
 				3975780529214B98005EE698 /* WelcomeOnboardView.swift */,
 				3918ED6B2923621D00E775A1 /* SettingsView.swift */,
+				391A0A62292760500063C3BD /* TwitterClone.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 				39C9596D291F6B5D00070C77 /* SearchAndFindAvView.swift in Sources */,
 				39E0B36B2918048900510A5F /* EnterNameAndEmailView.swift in Sources */,
 				397BCD8B28F405FB00A9FDF6 /* BeepBeepApp.swift in Sources */,
+				391A0A63292760500063C3BD /* TwitterClone.swift in Sources */,
 				396260692916BA4100C3BFBE /* OtpViewModel.swift in Sources */,
 				39E39BCB291D68D000B34BAC /* LocationCoordinatesModel.swift in Sources */,
 				39B7EE8E291A0C2200778C3A /* UserProfileView.swift in Sources */,

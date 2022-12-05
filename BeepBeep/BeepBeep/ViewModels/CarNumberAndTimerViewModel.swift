@@ -26,6 +26,7 @@ class CarNumberAndTimerViewModel: ObservableObject {
     init() {
         carNumber = "SGJ2501L"
         arrivalTime = 12222221
+//        arrivalTime = Int(Date.now.addingTimeInterval(300).millisecondsSince1970)
     }
      
     func getCarNumber() {

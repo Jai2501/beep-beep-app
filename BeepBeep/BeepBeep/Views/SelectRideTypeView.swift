@@ -47,12 +47,12 @@ struct SelectRideTypeView: View {
             .edgesIgnoringSafeArea(.all)
             
             // To show the route
-            Image("RouteForDemo")
-                .resizable()
-                .scaledToFit()
-                .frame(width: UIScreen.main.bounds.width * 0.7)
-                .padding(.top, UIScreen.main.bounds.height * 0.428)
-                .padding(.leading, UIScreen.main.bounds.width * 0.1)
+//            Image("RouteForDemo")
+//                .resizable()
+//                .scaledToFit()
+//                .frame(width: UIScreen.main.bounds.width * 0.7)
+//                .padding(.top, UIScreen.main.bounds.height * 0.428)
+//                .padding(.leading, UIScreen.main.bounds.width * 0.1)
             
             VStack {
                 RoundedRectangle(cornerRadius: 10)
